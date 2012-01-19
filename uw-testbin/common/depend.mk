@@ -1,0 +1,4 @@
+
+funcs.o: \
+ funcs.c
+

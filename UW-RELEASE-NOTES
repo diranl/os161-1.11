@@ -1,0 +1,47 @@
+UWV7b:
+Jan 1, 2012 Tim Brecht
+Added uw-testbin/vm-mix1, vm-mix1-exec vm-mix1-fork, vm-mix2
+      These somehow got missed the in UWV7
+----------------------------------------------------------------------
+UWV7:
+Jan 1, 2012 Tim Brecht
+Added mk/uw-prog-ldscript and modified prog.mk to use it.
+      This allows .data segments in user programs to start at 0x10000000.
+      Note that I took the kern/arch/mips/ldscript and modified it.
+Added uw-testbin and some code used for testing.
+Added kern/vm/uw-vmstats.c kern/include/uw-vmstats.h used for A3.
+
+NOTE: When adding files I've tried to use uw- as a prefix to the file
+      name so if we later try to move to new versions of OS/161 I'm
+      hoping it will be easier to find the code.
+      That's also why I created uw-testbin (to keep our code separate
+      from the code that came with testbin).
+   
+----------------------------------------------------------------------
+UWV6:
+May 2011
+Patched kern/arch/mips/ldscript so that it will work with the
+newer toolchain used in S11.  This patch allows line numbers and
+frame info to work properly in gdb.
+----------------------------------------------------------------------
+UWV5:
+???
+----------------------------------------------------------------------
+UWV4:
+???
+----------------------------------------------------------------------
+UWV3:
+????
+----------------------------------------------------------------------
+UWV2:
+August, 2007
+Tim Brecht - added options for assignments 0-5.
+
+Sat Sep  8 20:36:52 EDT 2007
+Tim Brecht - changed defaults in configure so that they match 
+   all of the docs. Now just ./configure should do what we would like.
+----------------------------------------------------------------------
+UWV1:
+Used during a pilot with three groups during S07 by Ken Salem.
+
+
