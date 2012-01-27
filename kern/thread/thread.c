@@ -540,6 +540,32 @@ thread_sleep(const void *addr)
 }
 
 /*
+ * Wake up one and only one thread
+ */
+void
+thread_singlewake(const void *addr)
+{
+  int i, result;
+
+  for (i=0;i<array_getnum(sleepers); i++) {
+		struct thread *t = array_getguy(sleepers, i);
+		if (t->t_sleepaddr == addr) {
+			
+			// Remove from list
+			array_remove(sleepers, i);
+			
+			/*
+			 * Because we preallocate during thread_fork,
+			 * this should never fail.
+			 */
+			result = make_runnable(t);
+			assert(result==0);
+      break;  // Stop at the first find
+		}
+  } 
+}
+
+/*
  * Wake up one or more threads who are sleeping on "sleep address"
  * ADDR.
  */
